@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desi Stories & Proverbs Hub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>📚 Desi Stories & Proverbs Hub</h1>
+            <div class="nav-links">
+                <button class="tab-btn active" onclick="showTab('stories')">Stories</button>
+                <button class="tab-btn" onclick="showTab('proverbs')">Proverbs</button>
+                <button class="tab-btn" onclick="showTab('share')">Share</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Stories Tab -->
+        <section id="stories-tab" class="tab-content active">
+            <div class="controls">
+                <select id="story-language-filter">
+                    <option value="">All Languages</option>
+                </select>
+                <select id="story-category-filter">
+                    <option value="">All Categories</option>
+                    <option value="Family">Family</option>
+                    <option value="Legend">Legend</option>
+                    <option value="Moral">Moral</option>
+                    <option value="Historical">Historical</option>
+                    <option value="Personal">Personal</option>
+                </select>
+                <button onclick="loadStories()">Refresh</button>
+            </div>
+            <div id="stories-container" class="content-grid">
+                <!-- Stories will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Proverbs Tab -->
+        <section id="proverbs-tab" class="tab-content">
+            <div class="controls">
+                <select id="proverb-language-filter">
+                    <option value="">All Languages</option>
+                </select>
+                <select id="proverb-region-filter">
+                    <option value="">All Regions</option>
+                    <option value="North">North</option>
+                    <option value="South">South</option>
+                    <option value="East">East</option>
+                    <option value="West">West</option>
+                    <option value="Central">Central</option>
+                </select>
+                <button onclick="loadProverbs()">Refresh</button>
+            </div>
+            <div id="proverbs-container" class="content-grid">
+                <!-- Proverbs will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Share Tab -->
+        <section id="share-tab" class="tab-content">
+            <div class="share-container">
+                <h2>Share Your Story or Proverb</h2>
+                
+                <div class="share-options">
+                    <button class="share-type-btn active" onclick="toggleShareType('story')">Share Story</button>
+                    <button class="share-type-btn" onclick="toggleShareType('proverb')">Share Proverb</button>
+                </div>
+
+                <!-- Story Form -->
+                <form id="story-form" class="share-form">
+                    <input type="text" id="story-title" placeholder="Story Title" required>
+                    <textarea id="story-content" placeholder="Tell your story..." required></textarea>
+                    <input type="text" id="story-author" placeholder="Your Name (optional)">
+                    <select id="story-language" required>
+                        <option value="">Select Language</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="English">English</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="Telugu">Telugu</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Marathi">Marathi</option>
+                        <option value="Gujarati">Gujarati</option>
+                        <option value="Punjabi">Punjabi</option>
+                        <option value="Malayalam">Malayalam</option>
+                        <option value="Kannada">Kannada</option>
+                        <option value="Urdu">Urdu</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <select id="story-category" required>
+                        <option value="">Select Category</option>
+                        <option value="Family">Family</option>
+                        <option value="Legend">Legend</option>
+                        <option value="Moral">Moral</option>
+                        <option value="Historical">Historical</option>
+                        <option value="Personal">Personal</option>
+                    </select>
+                    <input type="text" id="story-tags" placeholder="Tags (comma separated)">
+                    <button type="submit">Share Story</button>
+                </form>
+
+                <!-- Proverb Form -->
+                <form id="proverb-form" class="share-form" style="display: none;">
+                    <input type="text" id="proverb-text" placeholder="Proverb" required>
+                    <textarea id="proverb-meaning" placeholder="Meaning or explanation..."></textarea>
+                    <select id="proverb-language" required>
+                        <option value="">Select Language</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="English">English</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="Telugu">Telugu</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Marathi">Marathi</option>
+                        <option value="Gujarati">Gujarati</option>
+                        <option value="Punjabi">Punjabi</option>
+                        <option value="Malayalam">Malayalam</option>
+                        <option value="Kannada">Kannada</option>
+                        <option value="Urdu">Urdu</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <select id="proverb-region" required>
+                        <option value="">Select Region</option>
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+                        <option value="Central">Central</option>
+                    </select>
+                    <input type="text" id="proverb-contributor" placeholder="Your Name (optional)">
+                    <button type="submit">Share Proverb</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Desi Stories & Proverbs Hub - Preserving our heritage, one story at a time</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
