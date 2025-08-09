@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Desi Stories & Proverbs Hub
 
 A simple, user-friendly platform for sharing family stories, local legends, and proverbs in native languages.
@@ -30,4 +30,4 @@ desi-stories-hub/
 └── package.json
 =======
 # DesiStories
->>>>>>> b423ffb185efe4a4f42379e305676e7da930766f
+
